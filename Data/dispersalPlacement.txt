@@ -1,0 +1,8 @@
+Cyphostemma_microdiptera_9687_n544 MAD84 Madagascar
+Cyphostemma_mappia_H16 Cyphostemma_mappia_H16 Mauritius
+AL9 AL9 Eastern_Africa
+AL9 AL2 Southern_Africa
+AL7 AL7 Eastern_Africa
+Tow3 Cyphostemma_simulans_360 Southern_Africa
+Cyphostemma_sp_nov_Wen7405 Cyphostemma_sp_nov_Wen7405 Asia
+Cyphostemma_adenocaule_11650_n449 Cyphostemma_kilimandscharicum_11690_n450 Eastern_Africa_Root

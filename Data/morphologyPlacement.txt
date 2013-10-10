@@ -1,0 +1,5 @@
+Cyphostemma_macrocarpa_9589_n542 Cyphostemma_mappia_H16 succulence
+Cyphostemma_mappia_H16 Cyphostemma_mappia_H16 tree
+AL7 AL2 stem_succulent
+Cyphostemma_junceum_11615_n445 Cyphostemma_grahamii_11652_n423 herb
+Cyphostemma_vanmeelii_11642_n435 Cyphostemma_jiguu_11659_n424 herb

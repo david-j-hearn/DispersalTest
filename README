@@ -1,0 +1,41 @@
+1. Overview
+
+	DispersalTest is an evolutionary tool that examines the relationship between two types of events, such as evolutionary and biogeographic events, using a phylogenetic context. It examines how close one type of event, such as a morphological transition, occurred with another type of event, such as long distance dispersal.  This analysis calculates the average distance between the observed morphological transition and the nearest, older dispersal event.  To generate a null distribution of distances, it places the observed dispersal events and randomly places the morphological events (i.e., gain of a trait) on the tree.
+
+2. Compilation
+
+	Install a current java SDK (http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
+	At the command line, type:
+		javac getDispersalIndex.java
+
+3. Preparing the analysis
+
+	1. Obtain a tree file in alt-nexus format using paup or other tree manipulation program with your tree(s) of interest. Remove comments (i.e., items between '[' and ']') from this NEXUS file.
+	2. Create a file documenting the positions of morphological transitions of interest. Each line of this file lists two taxa in your tree whose MRCA is where the morphological transition occurred.
+	3. Create a file documenting biogeographic dispersal events. Each line of this file lists two taxa in your tree whose MRCA is where the dispersal event occurred. INCLUDE THE ROOT AS A DISPERSAL EVENT.
+
+4. Running the analysis
+
+	At the command line, type the following, filling in the appropriate values for items between < and >:
+		java getDispersalIndex <file with altnexus-format tree> <file that specifies locations of morphological transitions in tree> <file that specifies locations of dispersal events in tree> <number of randomizations> <output file>
+
+5. Examples
+
+	These examples come from an analysis of the transitions in growth form and their relationship to long distance dispersal events in the Old World grape relative, Cyphostemma (Vitaceae). 
+
+	Calculate the average dispersal distance for the observed morphological transitions and dispersal events, and carry out 10000 randomizations on the MCCT tree from a Bayesian analysis:
+
+		java getDispersalIndex Data/DispersalTestTree.treeannotator_r1_r7.MCCT_mean.tre Data/morphologyPlacement.txt Data/dispersalPlacement.txt 10000 dispersalTest.mcct.out.txt &
+
+	Calculate the average dispersal distance for the observed morphological transitions and dispersal events for each tree in the tree file, and carry out 10 randomizations on each of the trees in the file:
+
+		java getDispersalIndex Data/DispersalTestTree.logcombiner.r1_r7.tre Data/morphologyPlacement.txt Data/dispersalPlacement.txt 10 dispersalTest.posteriorSample.out.txt &
+
+6. Output
+
+	The output is a tab-delimited spreadsheet with the following columns:
+
+		Tree number: The number of the tree from the supplied tree file, ordered from the first tree in the file to the last tree.
+		Randomization replicate: The number of the randomization replicate. This starts with 0.
+		Randomized average distance between events: The distance between events based on randomized data.
+	      	Observed average distance between events: The distance between events based on observed reconstructions of events.
